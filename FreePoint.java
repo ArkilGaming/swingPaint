@@ -8,6 +8,8 @@ import java.awt.Point;
 
 public class FreePoint extends Tool {
 	
+	private boolean erease = false;
+	
 	FreePoint() {
 		super();
 	}
@@ -22,7 +24,14 @@ public class FreePoint extends Tool {
 		g2d.setColor(this.drawHue);
 		var x = this.pnt.elementAt(0).x - (int)(this.size/2);
 		var y = this.pnt.elementAt(0).y - (int)(this.size/2);
-		g2d.fillOval(x, y, (int)this.size, (int)this.size);
+		g2d.drawOval(x, y, (int)this.size, (int)this.size);
+	}
 
+	public boolean getErease() {
+		return erease;
+	}
+
+	public void setErease(boolean erease) {
+		this.erease = erease;
 	}
 }

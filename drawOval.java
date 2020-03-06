@@ -23,9 +23,12 @@ public class drawOval extends Tool {
 		
 		var x = this.pnt.elementAt(0).x;
 		var y = this.pnt.elementAt(0).y;
-		var x2 = this.pnt.elementAt(1).x - x;
-		var y2 = this.pnt.elementAt(1).y - y;
-			
-		g2d.drawOval(x, y, x2, y2);
+		var x2 = this.pnt.elementAt(1).x;
+		var y2 = this.pnt.elementAt(1).y;
+		
+		int[] temp = super.checkNegative(x, x2, y, y2);
+		
+		//x, y, distance between x and x2, distance between y and y2
+		g2d.drawOval(temp[0], temp[2], temp[1] - temp[0], temp[3] - temp[2]);
 	}
 }

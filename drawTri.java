@@ -25,7 +25,7 @@ public class drawTri extends Tool {
 		var y = this.pnt.elementAt(0).y;
 		var x2 = this.pnt.elementAt(1).x;
 		var y2 = this.pnt.elementAt(1).y;
-			
+		
 		g2d.drawPolygon(new int[] {x, (x+x2)/2, x2}, new int[] {y, y2, y}, 3);
 	}
 }

@@ -8,6 +8,8 @@ import java.awt.Point;
 
 public class FreeLine extends Tool {
 	
+	private boolean erease = false;
+	
 	FreeLine() {
 		super();
 	}
@@ -22,13 +24,20 @@ public class FreeLine extends Tool {
 		g2d.setColor(this.drawHue);
 		
 		for (int i = 1; i < this.pnt.size(); ++i) {
-			var x = this.pnt.elementAt(i-1).x - (int)this.size/2;
-			var y = this.pnt.elementAt(i-1).y - (int)this.size/2;
-			var x2 = this.pnt.elementAt(i).x - (int)this.size/2;
-			var y2 = this.pnt.elementAt(i).y - (int)this.size/2;
+			var x = this.pnt.elementAt(i-1).x;
+			var y = this.pnt.elementAt(i-1).y;
+			var x2 = this.pnt.elementAt(i).x;
+			var y2 = this.pnt.elementAt(i).y;
 			
 			g2d.drawLine(x, y, x2, y2);
 		}
+	}
 
+	public boolean getErease() {
+		return erease;
+	}
+
+	public void setErease(boolean erease) {
+		this.erease = erease;
 	}
 }
