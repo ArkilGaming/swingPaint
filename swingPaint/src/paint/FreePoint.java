@@ -20,11 +20,11 @@ public class FreePoint extends Tool {
 	
 	public void draw(Graphics g) {
 		var g2d = (Graphics2D)g;
-		g2d.setStroke(new BasicStroke(this.size, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER, 1.0f));
+		g2d.setStroke(new BasicStroke(this.size/2, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER, 1.0f));
 		g2d.setColor(this.drawHue);
 		var x = this.pnt.elementAt(0).x - (int)(this.size/2);
 		var y = this.pnt.elementAt(0).y - (int)(this.size/2);
-		g2d.drawOval(x, y, (int)this.size, (int)this.size);
+		g2d.fillOval(x, y, (int)this.size, (int)this.size);
 	}
 
 	public boolean getErease() {

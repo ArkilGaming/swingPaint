@@ -45,7 +45,7 @@ public class paintMain extends JFrame {
 	private Vector<Tool> strokes = new Vector<Tool>();
 	private Vector<JButton> btns = new Vector<JButton>();
 	private Vector<JButton> palette = new Vector<JButton>();
-	
+
 	private JButton col1btn, col2btn,
 		playBtn;
 	private layer baseLayer;
@@ -449,7 +449,7 @@ public class paintMain extends JFrame {
 		contentPane.add(sizeField);
 		
 		//Color buttons
-		for (int i = 0; i < cols.length; ++i) {
+		for (int i = 0; i < cols.length+1; ++i) {
 			
 			palette.add(new JButton());
 			palette.elementAt(i).addActionListener(al);
@@ -462,6 +462,8 @@ public class paintMain extends JFrame {
 			contentPane.add(palette.elementAt(i));
 		}
 		
+		
+
 		col1btn = new JButton();
 		col2btn = new JButton();
 		col1btn.setBounds(27*btnSize, 10, btnSize, btnSize);
