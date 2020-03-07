@@ -76,7 +76,7 @@ public class paintMain extends JFrame {
     	Graphics2D g2 = image.createGraphics();
     	surface.paint(g2);
     	return image;
-     }
+	}
 	
 	//A single layer
 	@SuppressWarnings("serial")
@@ -101,7 +101,7 @@ public class paintMain extends JFrame {
 				
 				setBackground(Color.white);
 			}
-			
+
 			//Draw strokes
 			@Override
 			protected void paintComponent(Graphics g) {
@@ -207,8 +207,8 @@ public class paintMain extends JFrame {
 					strokes.add(new FreePoint(temPnt, baseLayer.getBackground(), size));
 					strokes.elementAt(strokes.size()-1).setErease(true);
 				case bucket:
-					baseLayer.setBackground(curColor);
-					//strokes.add(new drawBucket(temPnt, curColor, getImage(contentPane)));
+					//baseLayer.setBackground(curColor);
+					strokes.add(new drawBucket(temPnt, curColor, getImage(contentPane)));
 				default:
 					break;
 				}

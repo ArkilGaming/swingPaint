@@ -24,6 +24,7 @@ public class drawBucket extends Tool {
 	
 	private BufferedImage img;
 	private Point origin = new Point();
+	private boolean dup = false;
 	
 	drawBucket() {
 		super();
@@ -49,11 +50,31 @@ public class drawBucket extends Tool {
 	}
 	
 	void getPoints(int x, int y, Graphics2D g2d) {
+		System.out.println(new Color(img.getRGB(x,y)));
+		//check for duplicate
+		dup = false;
+		for (int i = 1; i < pnt.size();) {
+			if (pnt.size() != 0) {
+				if (pnt.elementAt(i).x != x || pnt.elementAt(i).y != y)
+					++i;
+				else
+					dup = true;
+					i = pnt.size();
+			}
+			else
+				i = pnt.size();
+		}
+		if (dup) {
+			System.out.println("dup = tru");
+			return;
+		}
 		//out of bound
 		if (x > img.getWidth() || x < 0) return;
 		else if (y > img.getHeight() || y < 0) return;
 		//Already the color that is supposed to be replaced
-		else if (new Color(img.getRGB(origin.x, origin.y)) == this.drawHue) return;
+		else if (new Color(img.getRGB(origin.x, origin.y)) == this.drawHue) {
+			return;
+		}
 		//Not the color supposed to be replaced
 		else if (img.getRGB(x, y) != img.getRGB(origin.x, origin.y)) return; 
 		//Right color, do same in 4 directions
