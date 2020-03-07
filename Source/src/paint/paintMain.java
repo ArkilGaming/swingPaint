@@ -449,7 +449,7 @@ public class paintMain extends JFrame {
 		contentPane.add(sizeField);
 		
 		//Color buttons
-		for (int i = 0; i < cols.length+1; ++i) {
+		for (int i = 0; i < cols.length; ++i) {
 			
 			palette.add(new JButton());
 			palette.elementAt(i).addActionListener(al);
